@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Blender to three.js extrude + export json</title>
+		<style>
+			html, body, #sphere { height: 100%; }
+			body { margin: 0; overflow: hidden; background-color: #000; }
+		</style>	
+	</head>
+	<body>
+		<div id="sphere"></div>
+		<script src="js/three.min.js"></script>
+		<script src="js/OrbitControls.js"></script>	
+		<script src="js/Photosphere.js"></script>	
+		<script type="text/javascript" src="js/Stats.min.js"></script>
+		<script type="text/javascript" src="js/SPE.min.js"></script>
+		<script>
+			var photo = "img/4.jpg";
+			var photosphere = THREE.Photosphere(document.getElementById('sphere'), photo, {
+				speed: 2,
+				x: 2,
+				y: 1
+			});
+
+			window.onresize = photosphere.resize;
+		</script>
+	</body>
+</html>
